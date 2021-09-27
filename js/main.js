@@ -1,12 +1,10 @@
 //проверка чисел
 function getRandomNumber(min, max) {
   if (min < 0 || max < 0) {
-    const warning = 'Отрицательный диапозон';
-    return warning;
+    throw Error('Отрицательный диапозон');
   }
-  if (max <= min || max === min) {
-    const randomWarning = 'Ошибка значений';
-    return randomWarning;
+  if (max <= min) {
+    throw Error('Ошибка значений');
   }
   const  randomNumber =  (Math.random() * (max - min + 1) + min);
   return Math.floor(randomNumber);
