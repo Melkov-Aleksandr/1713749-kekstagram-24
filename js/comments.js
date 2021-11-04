@@ -37,4 +37,16 @@ function getUserComments() {
   return(userCommentArray);
 }
 
-export {NUMBER_OF_PEOPLE,userCommentPhrases, names, getUserComments, list};
+for (let index = 0; index < NUMBER_OF_PEOPLE; index++) {
+  const userElement = {
+    id: index+1,
+    url: `photos/${index+1}.jpg`,
+    description: `описание ${index+1}`,
+    likes: getRandomNumber(15, 200),
+    comments: getUserComments(),
+  };
+  list.push(userElement);
+}
+
+
+export {list};
