@@ -28,7 +28,7 @@ function getUserComments() {
   for (let index = 0; index < getRandomNumber(1,8); index++) {
     const comment = {
       id: myRandom(),
-      avatar: `img/avatar${getRandomNumber(1, 6)}.svg`,
+      avatar: `img/avatar-${getRandomNumber(1, 6)}.svg`,
       messege: userCommentPhrases[getRandomNumber(0, userCommentPhrases.length - 1)],
       name: names[getRandomNumber(0, names.length - 1)],
     };
@@ -36,6 +36,7 @@ function getUserComments() {
   }
   return(userCommentArray);
 }
+
 
 for (let index = 0; index < NUMBER_OF_PEOPLE; index++) {
   const userElement = {
@@ -47,6 +48,5 @@ for (let index = 0; index < NUMBER_OF_PEOPLE; index++) {
   };
   list.push(userElement);
 }
-
 
 export {list};
