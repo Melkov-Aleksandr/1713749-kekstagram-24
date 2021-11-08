@@ -51,9 +51,7 @@ function openPopupImage () {
   photoUploadOverlay.classList.remove('hidden');
   addBodyModalOpen();
 
-  uploadFormClose.addEventListener('click', () => {
-    closePopupImage();
-  });
+  uploadFormClose.addEventListener('click', closePopupImage);
 
   inputTextHashtags.addEventListener('input', validateHashTags);
   inputComment.addEventListener('input', validateTextarea);
@@ -67,9 +65,7 @@ function closePopupImage () {
   inputTextHashtags.value = '';
   inputComment.value = '';
 
-  uploadFormClose.removeEventListener('click', () => {
-    closePopupImage();
-  });
+  uploadFormClose.removeEventListener('click', closePopupImage);
 
   inputTextHashtags.removeEventListener('input', validateHashTags);
   inputComment.removeEventListener('input', validateTextarea);
