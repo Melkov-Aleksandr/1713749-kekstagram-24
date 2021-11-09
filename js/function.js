@@ -1,3 +1,5 @@
+const body = document.querySelector('body');
+
 //получаем рандомное число
 function getRandomNumber(min, max) {
   if (min < 0 || max < 0) {
@@ -28,7 +30,7 @@ function getStringLength (max, string) {
 
 getStringLength(maxString, testString);
 
-export {getStringLength, maxString, testString};
+export {getStringLength};
 
 //рандомное не повторяющиеся число
 
@@ -45,4 +47,14 @@ function myRandom() {
   }
 }
 
-export {myRandom};
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+const addBodyModalOpen = () => {
+  body.classList.add('modal-open');
+};
+
+const removeBodyModalOpen = () => {
+  body.classList.remove('modal-open');
+};
+
+export {myRandom, isEscapeKey, addBodyModalOpen, removeBodyModalOpen};

@@ -1,4 +1,5 @@
 import {list} from './comments.js';
+import {isEscapeKey} from './function.js';
 
 const body = document.querySelector('body');
 const bigPictures = document.querySelector('.big-picture');
@@ -65,23 +66,26 @@ function getClickPopup () {
   const collectionPopup = document.querySelectorAll('.big-picture__preview');
   const length = collectionPopup.length-1;
   for (let i = 0; i < length+1; i++) {
-    collectionPicture[i].addEventListener('click', () => {
+    collectionPicture[i].addEventListener('click', (evt) => {
+      evt.preventDefault();
       bigPictures.classList.remove('hidden');
       collectionPopup[i].classList.remove('hidden');
       body.classList.add('modal-open');
-    });
-    const close = collectionPopup[i].querySelector('.big-picture__cancel');
-    close.addEventListener('click', () => {
-      bigPictures.classList.add('hidden');
-      collectionPopup[i].classList.add('hidden');
-      body.classList.remove('modal-open');
-    });
-    document.addEventListener('keydown', (evt) => {
-      if (evt.keyCode === 27) {
+      document.addEventListener('keydown', (isEvent) => {
+        if (isEscapeKey(isEvent)) {
+          evt.preventDefault();
+          bigPictures.classList.add('hidden');
+          collectionPopup[i].classList.add('hidden');
+          body.classList.remove('modal-open');
+        }
+      });
+      const close = collectionPopup[i].querySelector('.big-picture__cancel');
+      close.addEventListener('click', (isEvt) => {
+        isEvt.preventDefault();
         bigPictures.classList.add('hidden');
         collectionPopup[i].classList.add('hidden');
         body.classList.remove('modal-open');
-      }
+      });
     });
   }
 }
