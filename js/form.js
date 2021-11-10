@@ -1,4 +1,6 @@
 import {isEscapeKey, addBodyModalOpen, removeBodyModalOpen, getStringLength} from './function.js';
+import {setDefaultScale} from './scale.js';
+import {defaultFilter} from './slider.js';
 
 const MAX_HASTAG_LENGTH = 5;
 const MAX_COMMENT_LENGTH = 140;
@@ -52,6 +54,9 @@ function openPopupImage () {
   addBodyModalOpen();
 
   uploadFormClose.addEventListener('click', closePopupImage);
+
+  setDefaultScale();
+  defaultFilter();
 
   inputTextHashtags.addEventListener('input', validateHashTags);
   inputComment.addEventListener('input', validateTextarea);
