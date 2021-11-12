@@ -1,11 +1,14 @@
 import {isEscapeKey, addBodyModalOpen, removeBodyModalOpen, getStringLength} from './function.js';
 import {setDefaultScale} from './scale.js';
 import {defaultFilter} from './slider.js';
+import {renderErrorMessege, renderSuccesMessege} from './eror-messege.js';
+import {sendData} from './api.js';
 
 const MAX_HASTAG_LENGTH = 5;
 const MAX_COMMENT_LENGTH = 140;
 const HASHTAG_NORMS = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
 
+const form = document.querySelector('#upload-select-image');
 const photoUploadOverlay = document.querySelector('.img-upload__overlay');
 const uploadFormOpen = document.querySelector('#upload-file');
 const uploadFormClose = document.querySelector('#upload-cancel');
@@ -89,4 +92,19 @@ inputComment.addEventListener('keydown', (evt) => {
   evt.stopPropagation();
 });
 
+const setImage = (onSuccess) => {
+  form.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+
+    sendData(
+      () => renderErrorMessege(),
+      () => renderSuccesMessege(),
+      new FormData(evt.target),
+    );
+
+    onSuccess();
+  });
+};
+
+export {setImage, closePopupImage};
 //
