@@ -97,8 +97,8 @@ const setImage = (onSuccess) => {
     evt.preventDefault();
 
     sendData(
-      () => renderErrorMessege(),
       () => renderSuccesMessege(),
+      () => renderErrorMessege(),
       new FormData(evt.target),
     );
 
@@ -106,5 +106,5 @@ const setImage = (onSuccess) => {
   });
 };
 
-export {setImage, closePopupImage};
+setImage(closePopupImage);
 //

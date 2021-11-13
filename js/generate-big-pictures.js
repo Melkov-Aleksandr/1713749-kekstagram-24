@@ -1,6 +1,5 @@
 import {isEscapeKey, addBodyModalOpen, removeBodyModalOpen} from './function.js';
 
-const ZERO = 0;
 const MAX_SHOW_COMMENT = 5;
 const bigPictures = document.querySelector('.big-picture');
 const bigPicturesComments = bigPictures.querySelector('.social__comment');
@@ -30,7 +29,7 @@ const getCommentUser = (comment) => {
 
 const showComment = () => {
   const hiddenComment = commentContainer.querySelectorAll('.social__comment.hidden');
-  Array.from(hiddenComment).slice(ZERO, MAX_SHOW_COMMENT).forEach((comment) => comment.classList.remove('hidden'));
+  Array.from(hiddenComment).slice(0, MAX_SHOW_COMMENT).forEach((comment) => comment.classList.remove('hidden'));
   const allComment = commentContainer.querySelectorAll('.social__comment');
   const allOpenComment = commentContainer.querySelectorAll('.social__comment:not(.hidden)');
   commentCount.textContent = allOpenComment.length;
