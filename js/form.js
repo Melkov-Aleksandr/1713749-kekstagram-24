@@ -107,4 +107,3 @@ const setImage = (onSuccess) => {
 };
 
 setImage(closePopupImage);
-//
