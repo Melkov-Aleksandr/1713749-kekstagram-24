@@ -34,4 +34,3 @@ const sendData = (onSuccess, onError, body) => {
 };
 
 export {getData, sendData};
-//

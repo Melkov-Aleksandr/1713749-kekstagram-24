@@ -83,4 +83,3 @@ function closeBigPicture() {
 }
 
 export {openBigPicture, getBigPicture};
-//

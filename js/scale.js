@@ -41,5 +41,3 @@ scale.addEventListener('click', (evt) => {
 });
 
 export {setDefaultScale, formImg};
-
-//
