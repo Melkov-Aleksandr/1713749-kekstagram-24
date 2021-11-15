@@ -58,8 +58,8 @@ const renderSuccesMessege = () => {
     closeMessage();
   });
 
-  document.removeEventListener('click', onDocument);
-  document.removeEventListener('keydown', onDocument);
+  document.addEventListener('click', onDocument);
+  document.addEventListener('keydown', onDocument);
 };
 
 const errorTemplate = document.querySelector('#error').content.querySelector('.error');

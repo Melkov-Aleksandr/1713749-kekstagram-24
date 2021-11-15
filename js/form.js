@@ -1,7 +1,7 @@
 import {isEscapeKey, addBodyModalOpen, removeBodyModalOpen, getStringLength} from './function.js';
 import {setDefaultScale} from './scale.js';
 import {defaultFilter} from './slider.js';
-import {renderErrorMessege, renderSuccesMessege} from './eror-messege.js';
+import {renderErrorMessege, renderSuccesMessege} from './messege.js';
 import {sendData} from './api.js';
 
 const MAX_HASTAG_LENGTH = 5;

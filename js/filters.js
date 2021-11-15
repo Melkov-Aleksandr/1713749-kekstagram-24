@@ -1,8 +1,9 @@
 import {generatePicture} from './generate-pictures.js';
 import {debounce} from './utils/debounce.js';
 import {getData} from './api.js';
-import {showAlert} from  './eror-messege.js';
+import {showAlert} from  './messege.js';
 
+const FILTER_LENGTH = 10;
 const filterDefaultButton = document.querySelector('#filter-default');
 const filterRandomButton = document.querySelector('#filter-random');
 const filterDiscussedButton = document.querySelector('#filter-discussed');
@@ -41,7 +42,7 @@ const removeButtonActive = () => {
 const clickFilterButton = (photo) => {
   containetButton.classList.remove('img-filters--inactive');
   const debounceProcess = debounce(() => generatePicture(photo));
-  const debounceProcessRandom = debounce(() => generatePicture(photo.slice(0,10)));
+  const debounceProcessRandom = debounce(() => generatePicture(photo.slice(0, FILTER_LENGTH)));
 
   filterDiscussedButton.addEventListener('click', () => {
     removeButtonActive();

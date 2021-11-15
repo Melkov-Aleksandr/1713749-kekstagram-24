@@ -1,6 +1,6 @@
 import {openBigPicture} from './generate-big-pictures.js';
 import {getData} from './api.js';
-import {showAlert} from  './eror-messege.js';
+import {showAlert} from  './messege.js';
 
 const field = document.querySelector('#picture').content.querySelector('.picture');
 const fieldContainer = document.querySelector('.pictures');

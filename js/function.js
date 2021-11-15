@@ -1,7 +1,5 @@
 const body = document.querySelector('body');
 
-//Проверка максимально длины строки
-
 const getStringLength = (max, string) => {
   if (string.length <= max) {
     return true;
